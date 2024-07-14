@@ -2,10 +2,10 @@
 
 FLAG := "picoCTF{fabian_es_el_mejor}"
 
-main: fabi blockchain.ZIP metadata.json
+main: artifacts.tar.gz metadata.json
 
-blockchain.zip: fabi
-	zip $@ $^
+artifacts.tar.gz: fabi
+	tar czvf $@ $^
 
 fabi:
 	@echo "$(FLAG)" > fabi

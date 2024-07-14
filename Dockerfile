@@ -11,7 +11,7 @@ RUN if [ -f packages.txt ]; then apt-get update && xargs -a packages.txt apt-get
 
 COPY . /app
 WORKDIR /app
-
+RUN ls /app
 # End of share layers for all builds of the same flask challenge
 FROM base AS challenge
 
@@ -20,7 +20,7 @@ ARG FLAG
 ARG SEED
 
 RUN make main
-RUN make blockchain.zip && mv blockchain.zip /challenge || true
+RUN mv artifacts.tar.gz /challenge || true
 RUN make metadata.json && mv metadata.json /challenge
 
 CMD tail -f /dev/null
