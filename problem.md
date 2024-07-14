@@ -12,7 +12,7 @@ Test your internet connection! Fabian wants to hack it!
 
 ## Details
 
-Download the flag [here]({{url_for("fabi")}}).
+Download the flag {{url_for("fabi", "here")}}.
 
 ## Hints
 
